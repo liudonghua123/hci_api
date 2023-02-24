@@ -1,19 +1,19 @@
 {
-  "name": "node_typescript_starter",
+  "name": "hci_api",
   "version": "0.1.0",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "author": "liudonghua",
-  "homepage": "https://github.com/liudonghua123/node_typescript_starter",
+  "homepage": "https://github.com/liudonghua123/hci_api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/liudonghua123/node_typescript_starter"
+    "url": "https://github.com/liudonghua123/hci_api"
   },
   "bugs": {
     "email": "liudonghua123@gmail.com",
-    "url": "https://github.com/liudonghua123/node_typescript_starter/issues"
+    "url": "https://github.com/liudonghua123/hci_api/issues"
   },
   "files": [
     "dist",
