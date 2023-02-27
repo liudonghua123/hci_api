@@ -55,6 +55,11 @@ export interface common_response {
     status: number
 }
 
+// https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
+type ide_type = `ide[${number}]`;
+type scsi_type = `scsi[${number}]`;
+type net_type = `net[${number}]`;
+
 export interface create_vm_form {
     /**
      * 虚拟机配置文件存放存储位置
@@ -133,12 +138,12 @@ export interface create_vm_form {
      * 磁盘
      * [$storageid]:[$filename] ,[media=cdrom|disk]---- 光驱设置模板 [$storageid]:[$volume],[ format=$format],[cache=d irectsync],[preallocate= off|full],[forecast=disa ble|enable],[cache_size= 256]----新磁盘设置模板 [$storageid]:none,[cache =directsync],[preallocat e=off|full],[copy=$stora geid:/$dir/$filename],[f orecast=disable|enable], [cache_size=256],[storag ename=$storagename]----- ---根据已有磁盘创建虚拟 机模板 storageid 磁盘所在存储 id 或 cdrom 挂载虚拟机镜像 所在存储 id filename 挂载镜像的名称 media 媒介，cd 或磁盘 format 虚拟机格式，默认为 qcow2 cache 缓存类型，固定为 directsync preallocate 是否预分配存 储空间 forecast 是 否 使 用 使 用 FastIO 硬盘（支持的操作系 统：Linux 操作系统需要内 核 版 本 高 于 2.6.18 ， Windows 操作系统需要先安 装虚拟机性能优化工具；不 支持 Windows 2000） cache_size 缓存大小，固定 为 256 dir 路径 filename 文件名 例子： ide2=094678b78828c306bc5 7f3343f840a1b:Red-HatEnterprise6.5x86_64.iso,media=cdro m--------光驱 ide0=35000c50075e94697_2 00bc79328d7:80,format=qc ow2,cache=directsync,pre allocate=off,forecast=en able,cache_size=256----- ---磁盘 vs_vol_rep2:none,cache=d irectsync,preallocate=of f,copy=vs_vol_rep2:backu p/images/1164668111610/v m-disk-1.qcow2.auto180317-202620-16a5de4a9f59-4506-9a1a- cfca7119e6b6.qcow2,forec ast=disable,cache_size=2 56,storagename=虚拟存储 (2 副本卷)----已有磁盘创 建
      */
-    ide?: string,
+    [key: ide_type]: string
     /**
      * 物理磁盘
      * [$storageid]:file:[volum e=$volume] storageid 物理磁盘所在存 储 id volume 物理磁盘的容量 例子： scsi[0]=36589cfc0000004f 9e5b79d0d593f6fb0:file:1 00G-----使用物理磁盘
      */
-    scsi?: string,
+    [key: scsi_type]: string
     /**
      * numa 总开关
      */
@@ -165,7 +170,7 @@ export interface create_vm_form {
      * 网卡
      * MODEL=XX:XX:XX:XX:XX:XX, [bridge=<dev>],[bridgena me=$name],[port=$port],[ connect=on] MODEL 网卡类型 XX:XX:XX:XX:XX:XX MAC 地 址 bridge 网桥类型（默认为物 理出口设备 id） port 端口 connect 默认为开启 例子： [rtl8139=FE:FC:FE:FD:62: 69,bridge=bvsf557d02,bri dgename=物理出口 1,port=12345678,connect= on]
      */
-    net?: string,
+    [key: net_type]: string,
     /**
      * 是否启用 numa 调度
 
