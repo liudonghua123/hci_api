@@ -1,17 +1,9 @@
-import { equal, throws } from 'assert';
-import { fibonacci } from '../src/index';
+import { equal } from 'assert';
+import { update_tickets } from '../src/common';
+// import {add_roles, delete_roles, update_roles, get_roles, create_vm, create_vm_cluster, delete_vm, encrypt_vm} from '../src/index'
 
 describe('Typescript usage suite', function () {
-    it('fibonacci(1) should return 1', async () => {
-        equal(fibonacci(1), 1);
-    });
-    it('fibonacci(2) should return 1', async () => {
-        equal(fibonacci(2), 1);
-    });
-    it('fibonacci(3) should return 2', async () => {
-        equal(fibonacci(3), 2);
-    });
-    it('fibonacci(4) should return 3', async () => {
-        equal(fibonacci(4), 3);
+    it('update_ticket() should work', async () => {
+        equal((await update_tickets()).ticket.length > 0, true);
     });
 });

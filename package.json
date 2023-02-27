@@ -1,7 +1,7 @@
 {
   "name": "hci_api",
   "version": "0.1.0",
-  "description": "",
+  "description": "This is simple node wrap around SANGFOR HCI API.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
