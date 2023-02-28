@@ -184,7 +184,7 @@ export interface create_vm_form {
      * 系统类型 
      * 注: wxp 为 windows XP; win7 为 windows 7; win8 为 windows8; l24 为 Linux 2.4 Kernel; l26 为 Linux 3.X/2.6 Kernel; ws 为 Windows Server2003; ws08 为 windows Server2008; w2k 为 Windows 2000;
      */
-    ostype?: 'othe' | 'other64' | 'wxp' | 'wxp64' | 'win7' | 'win764' | 'win8' | 'win864' | 'l24' | 'l2464' | 'l26' | 'l2664' | 'ws03' | 'ws0364' | 'ws08' | 'ws0864' | 'w2k' | 'ws1264' | 'sslvpn'
+    ostype?: 'other' | 'other64' | 'wxp' | 'wxp64' | 'win7' | 'win764' | 'win8' | 'win864' | 'l24' | 'l2464' | 'l26' | 'l2664' | 'ws03' | 'ws0364' | 'ws08' | 'ws0864' | 'w2k' | 'ws1264' | 'sslvpn'
     /**
      * 是否为重要虚拟机
      * 0 为不设置为重要虚拟机，1为设置
